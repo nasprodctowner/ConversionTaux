@@ -5,6 +5,7 @@ import exoCatalogueTaux.entity.UtilisateurEntity;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Collection;
 
 @Stateless(mappedName="GestionUtilisateur")
 public class UtilisateurBean implements UtilisateurItf {
@@ -34,4 +35,6 @@ public class UtilisateurBean implements UtilisateurItf {
     public int delete(String name) {
         return 0;
     }
+
+
 }

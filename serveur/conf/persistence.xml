@@ -2,12 +2,16 @@
 
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
 
-    <persistence-unit name="catalogueTauxPU" transaction-type="JTA">
+    <persistence-unit name="gestionCatalogueTauxPU" transaction-type="JTA">
             <jta-data-source>BDCatalogueTaux</jta-data-source>
     </persistence-unit>
 
     <persistence-unit name="utilisateurPU" transaction-type="JTA">
         <jta-data-source>BDUtilisateur</jta-data-source>
+    </persistence-unit>
+
+    <persistence-unit name="consulterTauxPU" transaction-type="JTA">
+        <jta-data-source>BDCatalogueTaux</jta-data-source>
     </persistence-unit>
 
 </persistence>
