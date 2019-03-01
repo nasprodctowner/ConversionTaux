@@ -1,13 +1,14 @@
 package exoCatalogueTaux.session;
 
+import exoCatalogueTaux.entity.UtilisateurEntity;
+
 import javax.ejb.Remote;
 
 @Remote
-public interface ConversionTauxItf {
+public interface GestionCatalogueTauxItf {
 
-    public float conversion(String mA, String mB, float montant);
+    public boolean connect(String name, String password);
     public void create(String mA, String mB, float nouveauTaux);
-    public float read(String mA, String mB);
     public void update(String mA, String mB, float nouveauTaux);
     public int delete(String mA, String mB);
 }
