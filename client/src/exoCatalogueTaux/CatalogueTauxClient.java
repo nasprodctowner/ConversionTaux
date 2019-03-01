@@ -1,20 +1,23 @@
 package exoCatalogueTaux;
 
 import exoCatalogueTaux.session.ConversionTauxItf;
+import exoCatalogueTaux.session.UtilisateurItf;
 
 import javax.naming.InitialContext;
 import java.util.*;
 
 public class CatalogueTauxClient {
 
-    private static ConversionTauxItf refBeanCata ;
+    private static ConversionTauxItf refConversionBEAN ;
+    private static UtilisateurItf refUtilisateurBEAN ;
 
     public static void main(String[] args) throws Exception {
 
 		try {
 
 			InitialContext ctx = new InitialContext();
-			refBeanCata = (ConversionTauxItf) ctx.lookup("GestionCatalogueTaux");
+			refConversionBEAN = (ConversionTauxItf) ctx.lookup("GestionCatalogueTaux");
+            refUtilisateurBEAN = (UtilisateurItf) ctx.lookup("GestionUtilisateur");
 		} catch (Exception ex) {
 			System.err.println("erreur dans le lookup");
 			ex.printStackTrace();
@@ -57,7 +60,7 @@ public class CatalogueTauxClient {
 				break;
 		}*/
 
-
+        /*
         System.out.println("Monnaie A ?");
         String mA3 = scanner.nextLine();
 
@@ -68,6 +71,16 @@ public class CatalogueTauxClient {
         float taux = scanner.nextFloat();
 
         refBeanCata.create(mA3,mB3,taux);
+
+        System.out.println("Entrée créé !" );*/
+
+        System.out.println("Nom A ?");
+        String nom = scanner.nextLine();
+
+        System.out.println("Password ?");
+        String password = scanner.nextLine();
+
+        refUtilisateurBEAN.create(nom,password);
 
         System.out.println("Entrée créé !" );
 
